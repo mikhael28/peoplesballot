@@ -1,9 +1,9 @@
-from flask import Flask, render_template, jsonify
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask import Flask, render_template
+#from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config.from_pyfile('config.py')
-db = SQLAlchemy(app)
+#app.config.from_pyfile('config.py')
+#db = SQLAlchemy(app)
 
 @app.route("/")
 def main():
@@ -17,15 +17,6 @@ def second():
 @app.route("/<username>")
 def profile(username):
 	return render_template('profile.html', name = username)
-
-#returns piece of Data in JSON, uses dictionary
-@app.route("/lotsofdata")
-def people():
-	my_people = {'Alice':25,
-				'Bob':21,
-				'Charlie':20,
-				'Doug':28}
-	return jsonify(my_people)
 
 
 @app.route("/second/<username>") #creating username as a variable
