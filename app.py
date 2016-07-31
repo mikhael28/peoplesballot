@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-	return 'Hello world' #render_template('index.html') #all templates in folder
+	return render_template('index.html')  #render_template('index.html') #all templates in folder
 
 @app.route("/first")
 def second():
-	return render_template('index.html') 
+	return "Hello world"
 
 #returns website
 #@app.route("/<username>")
