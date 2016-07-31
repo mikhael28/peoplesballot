@@ -11,7 +11,7 @@ def main():
 
 @app.route("/first")
 def second():
-	return "Hello World"
+	return render_template('index.html') 
 
 #returns website
 #@app.route("/<username>")
