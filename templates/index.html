@@ -1,73 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
- 
 <head>
-    <title>Python Flask Bucket List App</title>
- 
- 
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
- 
-    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
- 
- 
+	<meta charset = "UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/mystrap.css"
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+		function showContent() 
+		{
+			document.getElementById('main-content').style.display='inline'
+		}
+		function hideContent()
+		{
+			document.getElementById('main-content').style.display='none'
+		}
+	</script>
 </head>
- 
 <body>
- 
-    <div class="container">
-        <div class="header">
-            <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a>
-                    </li>
-                    <li role="presentation"><a href="#">Sign In</a>
-                    </li>
-                    <li role="presentation"><a href="showSignUp">Sign Up</a>
-                    </li>
-                    <button class="bootstrap class" id="pagetwo" href='pagetwo.html'> 
-    Click Me
-</button>
-                </ul>
-            </nav>
-            <h3 class="text-muted">Code for Democracy</h3>
-        </div>
- 
-        <div class="jumbotron">
-            <h1>The People's Pamphlet</h1>
-            <p class="lead"></p>
-            <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Input Address</a>
-            </p>
-        </div>
- 
-        <div class="row marketing">
-            <div class="col-lg-6">
-                <h4>The People's Pamphlet</h4>
-                <p>Providing helpful information for upcoming elections at the local, county, state and federal level.</p>
- 
-                <h4>We had to do it better</h4>
-                <p>Government half-heartedly gives you information on the latest initiatives, but its all organized rather poorly. We want to give you everything in one place.</p>
- 
-                <h4>Get out the vote!</h4>
-                <p>It's easy to be apathetic about the political climate, but its challenging to perservere towards a more perfect union. Get involved with a local campaign today!</p>
-            </div> 
-
-            <div class="col-lg-6">
-                <h4>Bucket List</h4>
-                <p>Placeholder text here.</p>
- 
-                <h4>Bucket List</h4>
-                <p>Placeholder text here.</p>
- 
-                <h4>Bucket List</h4>
-                <p>Placeholder text here.</p>
-            </div>
-        </div>
- 
-        <footer class="footer">
-            <p>&copy; Ian Berry and Michael Litchev ; Code for Democracy, 2016</p>
-        </footer>
- 
-    </div>
+	<div class="container-fluid">
+		<div class="row header" style="background-color:#006666;">
+			<div class="col-md-12">
+				<h2 style="color:white" class="title"> People's Pamphlet </h2>
+			</div>
+		</div>
+		<!-- <div class="row row-centered"> -->
+			<div class="col-lg-4 col-centered mailing-list">
+				<form class="form-inline form-center" role="form">
+					<div class="form-group">
+						<label for="email">Stay Up to Date!</label>
+						<input type="email" class="form-control" id="email" placeholder="Email Address">
+						<button type="submit" class="btn btn-default">Submit</button>
+					</div>
+				</form>
+		<!-- </div> -->
+		</div>
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-lg-3">
+					<h3 onMouseOver="showContent()" onMouseOut="hideContent()"> Your Vote </h3>
+					<h3> Your Elected Officals </h3>
+					<h3> Thing 3 </h3>
+					<h3> Thing 4 </h3>
+					<h3> Thing 5 </h3>
+				</div>
+				<div style="display:none;" class="col-lg-9" id="main-content" >
+					<p> 
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed sapien a nibh venenatis ultricies quis id erat. Suspendisse vehicula quam a leo porta, eu interdum nunc euismod. Donec a enim non eros placerat euismod at sit amet mi. Etiam in ligula at libero commodo tempor. Quisque sodales dignissim tortor, a egestas nisi maximus nec. Suspendisse erat dolor, posuere a elit sed, vestibulum imperdiet libero. Maecenas sed massa sed justo mattis sagittis. Mauris ut tincidunt ex, nec luctus leo. Quisque sit amet elementum augue. Cras sed mi luctus, lacinia ex sit amet, congue nunc. Proin semper tellus ut erat venenatis egestas. Integer tempor pretium nisi, ac pretium eros congue eget. Donec tristique non velit non consequat. Donec tincidunt lacinia lorem eu finibus. Mauris maximus dapibus turpis vel commodo.Sed lacus diam, pellentesque vel consectetur vel, mattis eget massa. Maecenas in augue vulputate, fermentum leo at, venenatis dui. Aenean et turpis sit amet enim suscipit ultrices. Duis dapibus ullamcorper mi, a euismod metus tristique sit amet. Vivamus elementum vulputate ante nec lobortis. Quisque feugiat dolor sed interdum condimentum. Cras nulla leo, congue ac justo sit amet, pretium euismod justo. Aliquam id velit libero. Fusce tempus lectus erat, non euismod lacus placerat.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
- 
 </html>
