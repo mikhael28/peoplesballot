@@ -6,9 +6,27 @@
 	<link rel="stylesheet" href="css/mystrap.css"
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script type="text/javascript">
-		function showContent() 
+		function showContent(contentId)
 		{
-			document.getElementById('main-content').style.display='inline'
+			var infoId = contentId
+			var showBox = document.getElementById('main-content');
+			var boxSetting = showBox.style.display;
+			var showInfo = document.getElementById(contentId);
+			//var infoSetting = showInfo.style.display;
+			//document.getElementById('main-content').style.display='inline';
+			//document.getElementById(contentId).style.display='inline';
+
+			if (boxSetting == 'inline') {
+				document.getElementById('content-1').style.display='none';
+				document.getElementById('content-2').style.display='none';
+				document.getElementById('content-3').style.display='none';
+				document.getElementById('content-4').style.display='none';
+				showInfo.style.display = 'inline';
+			}
+			else {
+				showBox.style.display = 'inline';
+				showInfo.style.display = 'inline';
+			}
 		}
 		function hideContent()
 		{
@@ -23,7 +41,7 @@
 				<h2 style="color:white" class="title"> People's Pamphlet </h2>
 			</div>
 		</div>
-		<!-- <div class="row row-centered"> -->
+		<div class="row row-centered">
 			<div class="col-lg-4 col-centered mailing-list">
 				<form class="form-inline form-center" role="form">
 					<div class="form-group">
@@ -32,20 +50,28 @@
 						<button type="submit" class="btn btn-default">Submit</button>
 					</div>
 				</form>
-		<!-- </div> -->
+			</div>
 		</div>
 		<div class="jumbotron">
 			<div class="row">
 				<div class="col-lg-3">
-					<h3 onMouseOver="showContent()" onMouseOut="hideContent()"> Your Vote </h3>
-					<h3> Your Elected Officals </h3>
-					<h3> Thing 3 </h3>
-					<h3> Thing 4 </h3>
-					<h3> Thing 5 </h3>
+					<h3 onClick="showContent('content-1')">Your Democracy.</h3>
+					<h3 onClick="showContent('content-2')">Your Country.</h3>
+					<h3 onClick="showContent('content-3')">Your Future.</h3>
+					<h3 onClick="showContent('content-4')">Your Vote.</h3>
 				</div>
 				<div style="display:none;" class="col-lg-9" id="main-content" >
-					<p> 
+					<p style="display:none;" id ='content-1'> 
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed sapien a nibh venenatis ultricies quis id erat. Suspendisse vehicula quam a leo porta, eu interdum nunc euismod. Donec a enim non eros placerat euismod at sit amet mi. Etiam in ligula at libero commodo tempor. Quisque sodales dignissim tortor, a egestas nisi maximus nec. Suspendisse erat dolor, posuere a elit sed, vestibulum imperdiet libero. Maecenas sed massa sed justo mattis sagittis. Mauris ut tincidunt ex, nec luctus leo. Quisque sit amet elementum augue. Cras sed mi luctus, lacinia ex sit amet, congue nunc. Proin semper tellus ut erat venenatis egestas. Integer tempor pretium nisi, ac pretium eros congue eget. Donec tristique non velit non consequat. Donec tincidunt lacinia lorem eu finibus. Mauris maximus dapibus turpis vel commodo.Sed lacus diam, pellentesque vel consectetur vel, mattis eget massa. Maecenas in augue vulputate, fermentum leo at, venenatis dui. Aenean et turpis sit amet enim suscipit ultrices. Duis dapibus ullamcorper mi, a euismod metus tristique sit amet. Vivamus elementum vulputate ante nec lobortis. Quisque feugiat dolor sed interdum condimentum. Cras nulla leo, congue ac justo sit amet, pretium euismod justo. Aliquam id velit libero. Fusce tempus lectus erat, non euismod lacus placerat.
+					</p>
+					<p style="display:none;" id ='content-2'>
+						Hello World
+					</p>
+					<p style="display:none;" id ='content-3'> 
+						3  
+					</p>
+					<p style="display:none;" id ='content-4'> 
+						4
 					</p>
 				</div>
 			</div>
