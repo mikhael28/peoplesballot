@@ -1,0 +1,26 @@
+.title {
+	margin-top:15px;
+}
+.row-centered {
+    text-align: center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.form-center{
+    text-align:center;	
+}
+.mailing-list {
+	text-align:center;
+	background-color: #cccc99;
+	border:1px double #cccc99;
+	display: inline-block;
+	border-radius:5px;
+	box-shadow: 1px 1px 1px #000000;
+	z-index: 10;
+}
