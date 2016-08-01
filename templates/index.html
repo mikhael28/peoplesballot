@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset = "UTF-8">
-	<!--<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/mystrap.css"> -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/mystrap.css') }}">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/mystrap.css"
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script type="text/javascript">
 		function showContent(contentId)
@@ -30,9 +28,11 @@
 				showInfo.style.display = 'inline';
 			}
 		}
-		function hideContent()
-		{
-			document.getElementById('main-content').style.display='none'
+		function hoverTime() {
+			document.getElementById('info').style.backgroundColor='#999999';
+		}
+		function reset() {
+			document.getElementById('info').style.backgroundColor='inherit';
 		}
 	</script>
 </head>
@@ -57,10 +57,10 @@
 		<div class="jumbotron">
 			<div class="row">
 				<div class="col-lg-3">
-					<h3 onClick="showContent('content-1')">Your Democracy.</h3>
-					<h3 onClick="showContent('content-2')">Your Country.</h3>
-					<h3 onClick="showContent('content-3')">Your Future.</h3>
-					<h3 onClick="showContent('content-4')">Your Vote.</h3>
+					<h3 class="mainLinks" onClick="showContent('content-1')">Your Democracy.</h3>
+					<h3 class="mainLinks" onClick="showContent('content-2')">Your Country.</h3>
+					<h3 class="mainLinks" onClick="showContent('content-3')">Your Future.</h3>
+					<h3 class="mainLinks" onClick="showContent('content-4')">Your Vote.</h3>
 				</div>
 				<div style="display:none;" class="col-lg-9" id="main-content" >
 					<p style="display:none;" id ='content-1'> 
@@ -73,7 +73,7 @@
 						3  
 					</p>
 					<p style="display:none;" id ='content-4'> 
-						4dlkf
+						4
 					</p>
 				</div>
 			</div>
