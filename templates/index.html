@@ -2,101 +2,141 @@
 <html lang="en">
 <head>
 	<meta charset = "UTF-8">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/mystrap.css') }}"
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script type="text/javascript">
-		function showContent(contentId)
-		{
-			var infoId = contentId
-			var showBox = document.getElementById('main-content');
-			var boxSetting = showBox.style.display;
-			var showInfo = document.getElementById(contentId);
-			//var infoSetting = showInfo.style.display;
-			//document.getElementById('main-content').style.display='inline';
-			//document.getElementById(contentId).style.display='inline';
-
-			if (boxSetting == 'inline') {
-				document.getElementById('content-1').style.display='none';
-				document.getElementById('content-2').style.display='none';
-				document.getElementById('content-3').style.display='none';
-				document.getElementById('content-4').style.display='none';
-				showInfo.style.display = 'inline';
-			}
-			else {
-				showBox.style.display = 'inline';
-				showInfo.style.display = 'inline';
-			}
-		}
-		function hoverTime() {
-			document.getElementById('info').style.backgroundColor='#999999';
-		}
-		function reset() {
-			document.getElementById('info').style.backgroundColor='inherit';
-		}
-	</script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/mystrap.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script>
+      	var map;
+      	function initMap() {
+        	map = new google.maps.Map(document.getElementById('map'), {
+          		center: {lat: 47.603843, lng: -122.330045},
+          		zoom: 12
+        	});
+      	}
+    </script>
+  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeFI11XGIKAZPvvB-PJskPPk39RqIZ-2E&callback=initMap" async defer></script>
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="row header" style="background-color:#006666;">
+		<div class="row header" style="background-color:#0052A5;">
 			<div class="col-md-12">
 				<h2 style="color:white" class="title"> People's Ballot </h2>
 			</div>
 		</div>
-		<div class="row row-centered">
-			<div class="col-lg-4 col-centered mailing-list">
-				<form class="form-inline form-center" role="form">
-					<div class="form-group">
-						<label for="email">Stay Up to Date!</label>
-						<input type="email" class="form-control" id="email" placeholder="Email Address">
-						<button type="submit" class="btn btn-default">Submit</button>
+		<div class="row">
+			<div class="panel-group" style="margin-top:15px;" id="main-content">
+  				<div class="panel panel-default" data-toggle="collapse" data-parent="#main-content" href="#collapse1">
+    				<div class="panel-heading">
+      					<h4 class="panel-title">
+        					Your Democracy.
+      					</h4>
+    				</div>
+    				<div id="collapse1" class="panel-collapse collapse"><!-- add 'in' to class to default open pannel -->
+      					<div class="panel-body">
+      						Across the United States, Democrats control 68 out of 98 partisan electoral legislatures while Republicans control.<a href="http://www.realclearpolitics.com/articles/2014/11/11/the_other_gop_wave_state_legislatures__124626.html">Click Here</a>
+							
+							In Washington State, we elect our judicial branch each year. Link: 
+							
+							http://votingforjudges.org/
+						</div>
+  					</div>
+  				</div>
+  				<div class="panel panel-default" data-toggle="collapse" data-parent="#main-content" href="#collapse2">
+    				<div class="panel-heading">
+      					<h4 class="panel-title">
+        					Your Country.
+      					</h4>
+    				</div>
+    				<div id="collapse2" class="panel-collapse collapse">
+      					<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      						Federal Elections impact your life on a daily basis, but their rate of turnout is much lower in non-Presidential years. Link:
+	
+							http://www.pewresearch.org/fact-tank/2014/07/24/voter-turnout-always-drops-off-for-midterm-elections-but-why/
+      					</div>
+    				</div>
+  				</div>
+  				<div class="panel panel-default" data-toggle="collapse" data-parent="#main-content" href="#collapse3">
+    				<div class="panel-heading">
+      					<h4 class="panel-title">
+        					Your Future.
+     					</h4>
+    				</div>
+    				<div id="collapse3" class="panel-collapse collapse">
+      					<div class="panel-body">
+      						Content coming soon. 
+      					</div>
+    				</div>
+  				</div>
+  				<div class="panel panel-default" data-toggle="collapse" data-parent="#main-content" href="#collapse4">
+  					<div class="panel-heading">
+  						<h4 class="panel-title">
+  							Your Vote.
+  						</h4>
+  					</div>
+  					<div id="collapse4" class="panel-collapse collapse">
+  						<div class="panel-body">
+  							All who can, should. Link to register below:
+							http://www.sos.wa.gov/elections/register.aspx
+
+							A timeline of the History of Voting. Link: 
+
+							http://massvote.org/voterinfo/history-of-voting-rights/
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  				<div class="row">
+				<div class="panel panel-heading" style="margin-bottom:0px;"id="address-bar"data-toggle="collapse" data-parent="#address-bar" href="#addinfo">
+					<h5 class="panel-title"> 
+						<a href="#">Get Your Local Election Inforamtion</a>
+					</h5>
+				</div>
+				<div id="addinfo" class="panel-collapse collapse">
+					<div class="panel-body">
+						<div class="col-md-4">
+							<form class="form" role="form">
+								<div class="form-group">
+									<label for="zipcode">Zip Code</label>
+									<input type="zipcode" class="form-control">
+								</div>
+								<button type="submit" class="btn btn-default">Submit</button>
+							</form>
+						</div>
+						<div class="col-md-1">
+							<h1>
+								OR
+							</h1>
+						</div>
+						<div class="col-md-5">
+							<form class="form" role="form">
+								<div class="form-group">
+									<label for="add1">Address</label>
+									<input type="add1" class="form-control">
+								
+									<label for="city">City</label>
+									<input type="city" class="form-control">
+							
+									<label for="state">State</label>
+									<input type="state" class="form-control">
+								
+									<label for="zip">Zip</label>
+									<input type="zip" class="form-control">
+								</div>
+								<button type="submit" class="btn btn-default">Submit</button>
+							</form> 
+						</div>
 					</div>
-				</form>
+				</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" id="map" style="height:300px;">
+
 			</div>
 		</div>
-		<div class="jumbotron">
-			<div class="row">
-				<div class="col-lg-3">
-					<h3 class="mainLinks" onClick="showContent('content-1')">Your Democracy.</h3>
-					<h3 class="mainLinks" onClick="showContent('content-2')">Your Country.</h3>
-					<h3 class="mainLinks" onClick="showContent('content-3')">Your Future.</h3>
-					<h3 class="mainLinks" onClick="showContent('content-4')">Your Vote.</h3>
-				</div>
-				<div style="display:none;" class="col-lg-9" id="main-content" >
-					<p style="display:none;" id ='content-1'> 
-						Across the United States, Democrats control 68 out of 98 partisan electoral legislatures while Republicans control.<a href="http://www.realclearpolitics.com/articles/2014/11/11/the_other_gop_wave_state_legislatures__124626.html">Click Here</a>
-
-						In Washington State, we elect our judicial branch each year. Link: 
-
-						http://votingforjudges.org/
-					</p>
-					<p style="display:none;" id ='content-2'>
-						Federal Elections impact your life on a daily basis, but their rate of turnout is much lower in non-Presidential years. Link:
-
-						http://www.pewresearch.org/fact-tank/2014/07/24/voter-turnout-always-drops-off-for-midterm-elections-but-why/
-
-					</p>
-					<p style="display:none;" id ='content-3'> 
-						Content coming soon. 
-					</p>
-					<p style="display:none;" id ='content-4'> 
-						All who can, should. Link to register below:
-						http://www.sos.wa.gov/elections/register.aspx
-
-						A timeline of the History of Voting. Link: 
-
-						http://massvote.org/voterinfo/history-of-voting-rights/
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class ="col-md-3"></div>
-		<div class ="col-md-6">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d43031.95802400173!2d-122.3440424807373!3d47.61646222764763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1470110041944" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</div>
-		<div class="col-md-3"></div>
 	</div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
