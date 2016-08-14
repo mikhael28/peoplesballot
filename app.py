@@ -1,13 +1,7 @@
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
 #from flask.ext.sqlalchemy import SQLAlchemy
-def create_app():
-	app = Flask(__name__)
-	Bootstrap(app)
 
-	return app
-
-
+app = Flask(__name__)
 #app.config.from_pyfile('config.py')
 #db = SQLAlchemy(app)
 
